@@ -79,6 +79,76 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .attachment-btn {padding: 6px 12px; margin-right: 10px; background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 5px; transition: background-color 0.3s;}
 .attachment-btn:hover {background-color: #e0e0e0;}
 
+/* 收件箱功能 */
+.email-app {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.inbox {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.inbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+#emailSearch {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.email-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.email-list > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.email-list > div:hover {
+    background-color: #f5f5f5;
+}
+
+.sender, .subject, .date {
+    margin: 0 5px;
+}
+
+.sender {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.subject {
+    flex-grow: 2;
+}
+
+.date {
+    flex-grow: 1;
+    text-align: right;
+    color: #888;
+}
+
 /*表格*/
 .table { width: 100%; border: 1px solid #e7e7e7; border-collapse:collapse; border-spacing:0; table-layout: fixed; }
 .table tr th, .table tr td { padding: 12px 8px; border-bottom: 1px solid #e1e6eb; }
