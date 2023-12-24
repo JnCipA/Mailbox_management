@@ -27,7 +27,7 @@
 			<div class="view-product">
 				<div class="info-center">
 					<div class="padding-big-tb manage-head">
-						<h6 class="padding-left manage-head-con">金币管理<span class="own text-normal" id="coinCount">拥有金币：<em class="text-roseo h2 margin-right">10</em>枚</span></h6>
+						<h6 class="padding-left manage-head-con">金币管理<span class="own text-normal">拥有金币：<em class="text-roseo h2 margin-right" id="coinCount">150</em>枚</span></h6>
 						<!-- 每日签到 -->
 						<div class="sign-content">
 							<!-- 签到时间 -->
@@ -47,17 +47,101 @@
 		
 					<div class="info-center-con">
 						<div class="coin_attent">
-							<p>金币可以用于升级VIP等级，享受更高级的服务！</p>
+							<p>金币可用于升级VIP等级，享受更高级的服务！</p>
 							<p>官方网站以及论坛、QQ群、微信以及微博会不定期举行活动，参与活动就有机会获得金币，金币也可直接购买，一枚币价值1.00元。</p>
 						</div>
 					</div>
 		
 					<div class="offcial-table table-margin clearfix" id="myTable">
 						<div class="tr-th clearfix">
-							<div class="th w30 text-center">明细</div>
-							<div class="th w50 text-center">数量</div>
-							<div class="th w20 text-center">时间</div>
+							<div class="th w30 text-center">
+								明细
+							</div>
+							<div class="th w50 text-center">
+								数量
+							</div>
+							<div class="th w20 text-center">
+								时间
+							</div>
 						</div>
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								升级至VIP1
+							</div>
+							<div class="td w50 text-center text-pay">
+								-100
+							</div>
+							<div class="td w20 text-center">
+								2023-12-15 9:11:24
+							</div>
+						</div>
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								签到
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+10
+							</div>
+							<div class="td w20 text-center">
+								2023-12-14 23:51:11
+							</div>
+						</div>
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								签到
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+10
+							</div>
+							<div class="td w20 text-center">
+								2023-12-13 19:11:09
+							</div>
+						</div><div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								签到
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+10
+							</div>
+							<div class="td w20 text-center">
+								2023-12-12 09:31:34
+							</div>
+						</div>
+
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								签到
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+10
+							</div>
+							<div class="td w20 text-center">
+								2023-12-11 16:31:09
+							</div>
+						</div>
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								签到
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+10
+							</div>
+							<div class="td w20 text-center">
+								2023-12-10 11:50:22
+							</div>
+						</div>
+						<div class="tr clearfix border-bottom-none">
+							<div class="td w30 padding-big-left">
+								注册新用户
+							</div>
+							<div class="td w50 text-center text-roseo">
+								+200
+							</div>
+							<div class="td w20 text-center">
+								2023-12-10 11:38:21
+							</div>
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -65,41 +149,49 @@
 			<script>
 				// 获取列表元素
 				var myTable = document.getElementById("myTable");
-		
+			
+				// 签到函数
+				function sign() {
+					updateCoinAndAddItem();
+			
+					// 显示签到成功信息
+					document.getElementById("signLogs").style.display = "block";
+				}
+			
 				// 更新金币数量和添加签到记录
 				function updateCoinAndAddItem() {
 					// 生成模拟的数据
 					var detail = "签到";
 					var quantity = "+10";
 					var time = getCurrentTime();
-		
+			
 					// 调用添加列表项的函数
 					addListItem(detail, quantity, time);
-		
+			
 					// 更新金币数量
 					var currentCoin = parseInt(document.getElementById('coinCount').innerText);
 					var updatedCoin = currentCoin + 10;
-					document.getElementById('coinCount').innerHTML = '拥有金币：<em class="text-roseo h2 margin-right">' + updatedCoin + '</em>枚';
-		
-					// 显示签到成功信息
-					document.getElementById("signLogs").style.display = "block";
-					document.getElementById('signUsers').style.display = "block";
-					document.getElementById('signs').innerHTML = '已完成';
+					document.getElementById('coinCount').innerHTML = '<em class="text-roseo h2 margin-right">' + updatedCoin + '</em>';
+			
+					// 更新按钮状态
+					var signButton = document.getElementById('signs');
+					signButton.innerText = '已完成';
+					signButton.disabled = true; // 禁用按钮
 				}
-		
+			
 				// 添加新的列表项
 				function addListItem(detail, quantity, time) {
 					var newItem = document.createElement("div");
 					newItem.className = "tr clearfix border-bottom-none";
-		
+			
 					newItem.innerHTML = '<div class="td w30 padding-big-left">' + detail + '</div>' +
 										'<div class="td w50 text-center">' + quantity + '</div>' +
 										'<div class="td w20 text-center">' + time + '</div>';
-		
+			
 					// 将新的列表项添加到列表中
-					myTable.appendChild(newItem);
+					myTable.insertBefore(newItem, myTable.children[1]);
 				}
-		
+			
 				// 获取当前时间的函数
 				function getCurrentTime() {
 					var now = new Date();
@@ -109,39 +201,15 @@
 					var hours = now.getHours();
 					var minutes = now.getMinutes();
 					var seconds = now.getSeconds();
-		
+			
 					return year + '-' + padZero(month) + '-' + padZero(day) + ' ' + padZero(hours) + ':' + padZero(minutes) + ':' + padZero(seconds);
 				}
-		
+			
 				// 补零的函数
 				function padZero(number) {
 					return number < 10 ? '0' + number : number;
 				}
-		
-				// 签到按钮
-				function sign() {
-					// 调用更新金币数量和添加签到记录的函数
-					updateCoinAndAddItem();
-		
-					// 获取签到时间
-					var data = new Date();
-					var year = data.getFullYear(); //获取年份
-					var month = data.getMonth() + 1; //获取月份
-					var today = data.getDate(); //获取当日
-					var nian = '年';
-					var yue = '月';
-					var ri = '日';
-					var o = '0';
-					var hours = data.getHours();
-					var min = data.getMinutes();
-					var mao = ':';
-					var signday = year + nian + month + yue + today + ri; //签到年月日拼接
-					var signmin = hours + mao + min; // 签到小时分钟
-					document.getElementById('todays').innerHTML = signday; //更新签到日期
-					document.getElementById('signMin').innerHTML = signmin; //更新签到时间
-				}
 			</script>
-
 
 	</body>
 </html>
