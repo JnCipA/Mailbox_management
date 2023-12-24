@@ -31,14 +31,14 @@
 					</div>
 					<div class="info-center-con">
 						<div class=" info-center-title h5 margin-big-top clearfix">
-							<span class="fl padding-large-right manage-title"><a href="#">全部消息</a></span>
-							<span class="fl padding-large-right"><a href="#">已读消息(0)</a></span>
-							<span class="fl"><a href="#">未读消息(0)</a></span>
+							<span class="fl padding-large-right manage-title" id="all"><a href="#allInformation">全部消息</a></span>
+							<span class="fl padding-large-right" id="miss"><a href="#missInformation">未读消息(1)</a></span>
+							<span class="fl" id="already"><a href="#haveReadInformation">已读消息(2)</a></span>
 						</div>
 						<p style="width: 56px; left: 20px;" class="solid-slider">
 						</p>
 					</div>
-					<div class="offcial-table input-table table-margin clearfix">
+					<div id="allInformation" class="offcial-table input-table table-margin clearfix" style="height: 652.8px;width: 1250px;position: absolute;z-index: 3;background-color: #fff;">
 						<div class="tr-th clearfix">
 							<div class="th w5 text-center">
 							</div>
@@ -52,8 +52,143 @@
 								类型
 							</div>
 						</div>
-						<div class="non-info">
-							<span>没有任何消息</span>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题3
+							</div>
+							<div class="th w25">
+								2023/12/21
+							</div>
+							<div class="th w15">
+								未读消息
+							</div>
+						</div>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题2
+							</div>
+							<div class="th w25">
+								2023/10/1
+							</div>
+							<div class="th w15">
+								已读消息
+							</div>
+						</div>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题1
+							</div>
+							<div class="th w25">
+								2023/04/01
+							</div>
+							<div class="th w15">
+								已读消息
+							</div>
+						</div>
+						<div class="page">
+							<ul class="offcial-page margin-top margin-big-right">
+								<li>共<em class="margin-small-left margin-small-right">2</em>条数据</li>
+								<li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+								<li><a class="next disable">上一页</a></li>
+								<li></li>
+								<li><a class="next disable">下一页</a></li>
+								<li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+							</ul>
+						</div>
+					</div>
+					<div id="missInformation" class="offcial-table input-table table-margin clearfix" style="height: 652.8px;width: 1250px;position: absolute;z-index:2;background-color: #fff;">
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题内容
+							</div>
+							<div class="th w25">
+								提交时间
+							</div>
+							<div class="th w15">
+								类型
+							</div>
+						</div>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+						</div>
+							<div class="padding-left-15 th w55">
+								标题3
+							</div>
+							<div class="th w25">
+								2023/12/21
+							</div>
+							<div class="th w15">
+								未读消息
+							</div>
+						</div>
+						<div class="page">
+							<ul class="offcial-page margin-top margin-big-right">
+								<li>共<em class="margin-small-left margin-small-right">2</em>条数据</li>
+								<li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+								<li><a class="next disable">上一页</a></li>
+								<li></li>
+								<li><a class="next disable">下一页</a></li>
+								<li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+							</ul>
+						</div>
+					</div>
+					<div id="haveReadInformation" class="offcial-table input-table table-margin clearfix" style="height: 652.8px;width: 1250px;position: absolute;z-index:1;background-color: #fff;">
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题内容
+							</div>
+							<div class="th w25">
+								提交时间
+							</div>
+							<div class="th w15">
+								类型
+							</div>
+						</div>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题2
+							</div>
+							<div class="th w25">
+								2023/10/1
+							</div>
+							<div class="th w15">
+								已读消息
+							</div>
+						</div>
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题1
+							</div>
+							<div class="th w25">
+								2023/04/01
+							</div>
+							<div class="th w15">
+								已读消息
+							</div>
+						</div>
+						<div class="page">
+							<ul class="offcial-page margin-top margin-big-right">
+								<li>共<em class="margin-small-left margin-small-right">2</em>条数据</li>
+								<li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+								<li><a class="next disable">上一页</a></li>
+								<li></li>
+								<li><a class="next disable">下一页</a></li>
+								<li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -74,6 +209,59 @@
 					$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
 				}
 			});
+		</script>
+
+		<!-- 通过更改z-index更改排序顺序 -->
+		<script>
+			var allInformation = document.getElementById("allInformation");
+			var missInformation = document.getElementById("missInformation");
+			var haveReadInformation = document.getElementById("haveReadInformation");
+
+			var all =  document.getElementById("all");
+			var miss =  document.getElementById("miss");
+			var already =  document.getElementById("already");
+
+			all.addEventListener('click', function(){
+				// 更改index来实现顺序的变更
+				allInformation.style.zIndex = 3;
+				missInformation.style.zIndex = 2;
+				haveReadInformation.style.zIndex = 1;
+				// 更改class实现下划线的变化
+				if (miss.classList.contains('manage-title')) {
+					miss.classList.remove('manage-title');
+					all.classList.add('manage-title');
+				} else if(already.classList.contains('manage-title')){
+					already.classList.remove('manage-title');
+					all.classList.add('manage-title');
+  				}
+			});
+
+			miss.addEventListener('click', function(){
+				allInformation.style.zIndex = 2;
+				missInformation.style.zIndex = 3;
+				haveReadInformation.style.zIndex = 1;
+				if (all.classList.contains('manage-title')) {
+					all.classList.remove('manage-title');
+					miss.classList.add('manage-title');
+				} else if(already.classList.contains('manage-title')){
+					already.classList.remove('manage-title');
+					miss.classList.add('manage-title');
+  				}
+			});
+
+			already.addEventListener('click', function(){
+				allInformation.style.zIndex = 1;
+				missInformation.style.zIndex = 2;
+				haveReadInformation.style.zIndex = 3;
+				if (miss.classList.contains('manage-title')) {
+					miss.classList.remove('manage-title');
+					already.classList.add('manage-title');
+				} else if(all.classList.contains('manage-title')){
+					all.classList.remove('manage-title');
+					already.classList.add('manage-title');
+  				}
+			});
+
 		</script>
 	</body>
 

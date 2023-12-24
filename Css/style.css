@@ -78,6 +78,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .attachments {text-align: left; }
 .attachment-btn {padding: 6px 12px; margin-right: 10px; background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 5px; transition: background-color 0.3s;}
 .attachment-btn:hover {background-color: #e0e0e0;}
+#scheduledTime {margin-top: 10px; padding: 5px; width: 95%; border: 1px solid #ccc; border-radius: 4px;}
 
 /* 收件箱功能 */
 .email-app {font-family: 'Arial', sans-serif; color: #333; margin: 0 auto; padding: 20px;}
@@ -109,7 +110,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
     flex-grow: 4;
 }
 
-.button-container {
+.post-button-container {
     display: flex; /* 使用 Flexbox 布局 */
     gap: 10px; /* 控制按钮之间的间隔 */
     padding: 10px 15px;
