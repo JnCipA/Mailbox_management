@@ -21,7 +21,7 @@
 				<!--注册-->
 				<div class="text-big text-center logo-color">同一个账号，连接一切</div>
 				<div class=" text-center margin-small-top logo-color text-small">控制台 | 云平台 | 论坛 | 云市场 </div>
-				<form class="register-form" name="register" id="register-form" action="login.html" method="post" autocomplete="off">
+				<form class="register-form" name="register" id="register-form" autocomplete="off">
 					<div class="reg-wrap border">
 						<div class="reg-number border-bottom">
 							<div class="fl reg-area text-gray">+86</div>
@@ -73,8 +73,20 @@
 				// 	return false; // 阻止表单提交
 				// }
 			// });
+			/* js跳转 */ 
+			var form = document.getElementById('register-form');
 
-			
+			// 为表单添加提交事件监听器
+			form.addEventListener('submit', function(event) {
+				// 阻止表单的默认提交行为
+				event.preventDefault();
+
+				// 这里可以添加您处理表单数据的代码
+				// 例如，验证输入、发送数据到服务器等
+
+				// 处理完成后，跳转到 login.html
+				window.location.href = 'login.html';
+			});	
 
 			/*发送验证码*/
 			$("#send").click(function() {
