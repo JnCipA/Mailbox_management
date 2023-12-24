@@ -89,7 +89,30 @@
 							</dt>
 							<dd class="padding-big">
 								<div class="account-class text-hidden">
-									<a href="#">查看VIP权限</a>
+									<a href="#" id="viewVip">查看VIP权限</a>
+									<!-- 模态对话框 -->
+									<div id="vipModal" class="modal">
+										<div class="modal-content">
+											<span class="close">&times;</span>
+											<h2>VIP权限列表</h2>
+											<table>
+												<tr>
+													<th>VIP等级</th>
+													<th>权限说明</th>
+												</tr>
+												<tr>
+													<td>VIP1</td>
+													<td>权限说明...</td>
+												</tr>
+												<tr>
+													<td>VIP2</td>
+													<td>权限说明...</td>
+												</tr>
+												<!-- 更多VIP等级和权限 -->
+											</table>
+											<!-- 更多VIP等级和权限说明 -->
+										</div>
+									</div>
 									<a href="#">帮助文档</a>
 								</div>
 							</dd>
@@ -161,6 +184,34 @@
 				$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
 			}
 		});
+	</script>
+	//查看VIP权限
+	<script>
+		// 获取模态框元素
+		var modal = document.getElementById("vipModal");
+
+		// 获取打开模态框的按钮
+		var btn = document.getElementById("viewVip");
+
+		// 获取 <span> 元素，用于关闭模态框
+		var span = document.getElementsByClassName("close")[0];
+
+		// 点击按钮打开模态框
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		// 点击 <span> (x), 关闭模态框
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// 点击模态框外的区域，关闭模态框
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
 	</script>
 </body>
 
