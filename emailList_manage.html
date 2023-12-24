@@ -100,7 +100,7 @@
 									昵称
 								</div>
 								<div class="th w30 text-center">
-									操作
+									添加时间
 								</div>
 							</div>
 							<div class="tr clearfix border-bottom-none" id="11">
@@ -133,6 +133,10 @@
 		</div>
 
 		<script> 
+			function getBeijingTime() {  
+				const now = new Date();   
+				return now;  
+			}  
             var accountLink = document.getElementById("link1");   
             var addAccountLink = document.getElementById("link2");   
             var manageDiv = document.getElementById("manage");    
@@ -218,9 +222,10 @@
 				numberDiv2.id = 'k1';  
 				numberDiv2.textContent = '٩';  
 				newDiv2.appendChild(numberDiv2);
+				const beijingTime = getBeijingTime().toLocaleString(); 
 				var caozuo = document.createElement('div')
 				caozuo.className = 'td w30 text-center';
-				caozuo.textContent = '无';
+				caozuo.textContent = beijingTime;
 				newDiv2.appendChild(caozuo);
 				existingDiv2.parentNode.insertBefore(newDiv2, existingDiv2.nextSibling);
 			}
@@ -299,5 +304,4 @@
 			});
 		</script>
 	</body>
-
 </html>
