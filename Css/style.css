@@ -109,7 +109,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
     flex-grow: 4;
 }
 
-.button-container {
+.post-button-container {
     display: flex; /* 使用 Flexbox 布局 */
     gap: 10px; /* 控制按钮之间的间隔 */
     padding: 10px 15px;
