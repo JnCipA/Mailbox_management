@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>控制台</title>
+		<link rel="stylesheet" type="text/css" href="Css/identify.css" />
+		<link rel="stylesheet" type="text/css" href="Css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="Css/account.css" />
+		<link rel="stylesheet" type="text/css" href="Css/style.css" />
+		<link rel="stylesheet" type="text/css" href="Css/control_index.css" />
+		<script type="text/javascript" src="Js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="Js/layer/layer.js"></script>
+		<script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
+		<script type="text/javascript" src="Js/select.js"></script>
+		<script type="text/javascript" src="Js/haidao.validate.js"></script>
+	</head>
+	<body>
+		<div class="view-topbar">
+			<div class="topbar-console">
+				<div class="tobar-head fl">
+					<a href="#" class="topbar-logo fl">
+					<span><img src="Images/logo.png" width="20" height="20"/></span>
+					</a>
+					<a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>管理控制台</span></a>
+				</div>
+			</div>
+			<div class="topbar-info">
+				<ul class="fr">
+					<li class="fl dropdown topbar-notice topbar-btn">
+					<a href="#" class="dropdown-toggle">
+					<span class="icon-notice"></span>
+					<span class="topbar-num have">0</span>
+					<!--have表示有消息，没有消息去掉have-->
+					</a>
+					</li>
+					<!-- 					<li class="fl topbar-info-item strong">
+					<div class="dropdown">
+						<a href="#" class="dropdown-toggle topbar-btn">
+						<span class="fl">工单服务</span>
+						<span class="icon-arrow-down"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">我的工单</a></li>
+							<li><a href="#">提交工单</a></li>
+						</ul>
+					</div>
+					</li>
+					 -->
+					<li class="fl topbar-info-item">
+					<div class="dropdown">
+						<a href="#" class="topbar-btn">
+						<span class="fl text-normal">帮助与文档</span>
+						<span class="icon-arrow-down"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">模板开发手册</a></li>
+							<li><a href="#">某某数据字典</a></li>
+						</ul>
+					</div>
+					</li>
+					<li class="fl topbar-info-item">
+					<div class="dropdown">
+						<a href="#" class="topbar-btn">
+						<span class="fl text-normal">小朱</span>
+						<span class="icon-arrow-down"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="login.html">退出</a></li>
+						</ul>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="view-body">
+			<div class="view-sidebar">
+				<div class="sidebar-content">
+					<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="#">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal">产品与服务</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+							<li>
+								<a href="webSet.html">
+									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+									<span class="text-normal">站点管理</span>
+								</a>
+							</li>
+							<li>
+								<a href="smsInfo.html">
+									<b class="sidebar-icon"><img src="Images/icon_message.png" width="16" height="16" /></b>
+									<span class="text-normal">短信</span>
+								</a>
+							</li>
+							<!-- <li>
+								<a href="#">
+									<b class="sidebar-icon"><img src="Images/icon_market.png" width="16" height="16" /></b>
+									<span class="text-normal">云市场</span>
+								</a>
+							</li> -->
+						</ul>
+					</div>
+					<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="#">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal">用户中心</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+                            <li>
+								<a href="Email.html">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">邮箱管理</span>
+								</a>
+							</li>
+							<li>
+								<a href="userInfo.html">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">账号管理</span>
+								</a>
+							</li>
+							<li>
+								<a href="identify.html">
+									<b class="sidebar-icon"><img src="Images/icon_authentication.png" width="16" height="16" /></b>
+									<span class="text-normal">实名认证</span>
+								</a>
+							</li>
+							<li>
+								<a href="message.html">
+									<b class="sidebar-icon"><img src="Images/icon_news.png" width="16" height="16" /></b>
+									<span class="text-normal">消息中心</span>
+								</a>
+							</li>
+							<li>
+								<a href="money.html">
+									<b class="sidebar-icon"><img src="Images/icon_gold.png" width="16" height="16" /></b>
+									<span class="text-normal">金币管理</span>
+								</a>
+							</li>
+							<li>
+								<a href="order.html">
+									<b class="sidebar-icon"><img src="Images/icon_order.png" width="16" height="16" /></b>
+									<span class="text-normal">订单管理</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="view-product">
+				<div class="info-center">
+					<div class=" padding-big-tb manage-head">
+						<h6 class="padding-left manage-head-con">邮箱管理</h6>
+					</div>
+					<div class="info-center-con">
+						<div class=" info-center-title h5 margin-big-top clearfix">
+							<span class="fl padding-large-right"><a href="#" id="link1">账号管理</a></span>
+							<span class="fl padding-large-right"><a href="#" id="link2">添加账号</a></span>
+						</div>
+					</div>
+					<div class="offcial-table table-margin clearfix" id="manage">
+						<div class="tr-th clearfix">
+							<div class="th w30 text-center">
+								账号
+							</div>
+							<div class="th w20 text-center">
+								类型
+							</div>
+							<div class="th w20 text-center">
+								昵称
+							</div>
+                            <div class="th w30 text-center">
+								操作
+							</div>
+						</div>
+						<div class="tr clearfix border-bottom-none" id="1">
+							<div class="td w30 text-center" id="n">
+								1122334455@qq.com
+							</div>
+							<div class="td w20 text-center" id="t">
+								qq邮箱
+							</div>
+							<div class="td w20 text-center" id="k">
+								٩
+							</div>
+                            <div class="td w15 text-center">
+								<a onclick="alter('1')">修改</a>
+							</div>
+                            <div class="td w15 text-center">
+								<a onclick="hide('1')">删除</a>
+							</div>
+						</div>
+						<dialog id="dialog1">
+							<h2>修改账号信息</h2>
+							<form>
+								<p>账号:<input type="text" id="name"></p>
+								<p>类型:<input type="text" id="type"></p>
+								<p>昵称:<input type="text" id="nickname"></p>
+								<div class="button-container">  
+									<input type="button" id="button1" value="完成" onclick="finish('dialog1')">  
+									<input type="button" id="button2" value="取消" onclick="cancel('dialog1')">  
+								</div>  
+							</form>
+						</dialog>					
+					</div>
+					<div class="offcial-table table-margin clearfix" id="add">
+						<div style="border-bottom: rgb(179, 177, 177) 0.5px solid;position: relative;">
+							<p style="font-weight: bold;font-size: larger;margin:20px;margin-bottom: 5px;">我的其他邮箱</p>
+							<p style="margin: 20px;margin-top: 5px;">添加其他邮箱账号，即可收取和管理其他邮箱的邮件。</p>
+							<button id="button3" onclick="show()">添加其他邮箱账号</button>
+						</div>
+						<div style="height: 200px;width: auto;text-align: center; margin-top: 150px;">
+							<a href="#" onclick="show()" style="text-decoration: none;color: rgb(71, 170, 227);">添加账号</a>
+							<p style="color: rgb(176, 176, 176);">暂无其他邮箱账号</p>
+						</div>
+						<dialog id="dialog2">
+							<h2>添加邮箱账号</h2>
+								<p>账号:</p>
+								<input type="text" id="username" value="请输入邮箱账号" style="height: 20px; width:600px;font-size: smaller;color:rgb(176, 176, 176);border: 0.5px rgb(176, 176, 176) solid;border-radius: 4px;">
+								<div class="button-container">  
+									<input type="button" id="button1" value="确认" onclick="add()">  
+									<input type="button" id="button2" value="取消" onclick="cancel('dialog2')">  
+								</div>  
+						</dialog>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script> 
+            var accountLink = document.getElementById("link1");   
+            var addAccountLink = document.getElementById("link2");   
+            var manageDiv = document.getElementById("manage");    
+            var addDiv = document.getElementById("add");  
+  
+            accountLink.addEventListener("click", function(e) {  
+                e.preventDefault(); 
+                addDiv.style.display='none';  
+                manageDiv.style.display='block';
+            });  
+  
+            addAccountLink.addEventListener("click", function(e) {  
+                e.preventDefault();  
+                manageDiv.style.display='none';
+                addDiv.style.display='block'; 
+            }); 
+			function add(){
+				var dialog = document.getElementById('dialog2');
+				dialog.style.display='none';
+				var existingDiv = document.getElementById('1'); 
+				var username = document.getElementById("username").value;
+				var type = username.match(/@(\w+)\./)[1];  
+				var newDiv = document.createElement('div');  
+				newDiv.className = 'tr clearfix border-bottom-none';  
+				newDiv.id = '2';  
+					
+				var emailDiv = document.createElement('div');  
+				emailDiv.className = 'td w30 text-center';  
+				emailDiv.id = 'n';  
+				emailDiv.textContent = username;  
+				newDiv.appendChild(emailDiv);  
+
+				var emailTypeDiv = document.createElement('div');  
+				emailTypeDiv.className = 'td w20 text-center';  
+				emailTypeDiv.id = 't';  
+				emailTypeDiv.textContent = type+'邮箱';  
+				newDiv.appendChild(emailTypeDiv);  
+
+				var numberDiv = document.createElement('div');  
+				numberDiv.className = 'td w20 text-center';  
+				numberDiv.id = 'k';  
+				numberDiv.textContent = '٩';  
+				newDiv.appendChild(numberDiv);  
+
+				var modifyLink = document.createElement('a');  
+				modifyLink.textContent = '修改';  
+				modifyLink.onclick = function() { 
+					alter('2'); 
+				};
+				modifyLink.className = 'td w15 text-center';  
+				modifyLink.id = '';  
+				newDiv.appendChild(modifyLink);  
+		
+				var deleteLink = document.createElement('a');  
+				deleteLink.textContent = '删除';  
+				deleteLink.onclick = function() { 
+					hide('2'); 
+				}; 
+				deleteLink.className = 'td w15 text-center';  
+				deleteLink.id = '';  
+				newDiv.appendChild(deleteLink);  
+				
+				existingDiv.parentNode.insertBefore(newDiv, existingDiv.nextSibling);
+
+			}
+			function show(){
+				var dialog = document.getElementById('dialog2');
+				dialog.style.display='block';
+			}   
+			function alter(divId){
+				var dialog = document.getElementById('dialog1');
+				dialog.style.display='block';
+
+				var div = document.getElementById(divId); 
+				var Elements = div.querySelectorAll('div'); 
+				var name =Elements[0].innerText;
+				var type = Elements[1].innerText;  
+				var nickname = Elements[2].innerText;  
+			
+				document.getElementById('name').value = name;  
+				document.getElementById('type').value = type;  
+				document.getElementById('nickname').value = nickname;  
+  
+            }
+			function cancel(dialogId){
+				var dialog = document.getElementById(dialogId);
+				dialog.style.display='none';
+			}
+			function finish(dialogId){
+				var dialog = document.getElementById(dialogId);
+				dialog.style.display='none';
+
+				var name = document.getElementById("name").value;
+				var type = name.match(/@(\w+)\./)[1];  
+				var nickname = document.getElementById("nickname").value;
+				document.getElementById('n').textContent = name;
+				document.getElementById('t').textContent = type+'邮箱';
+				document.getElementById('k').textContent = nickname;
+			}
+			function hide(divId){
+				var div = document.getElementById(divId);
+				div.style.display='none';
+			}
+			$(".sidebar-title").live('click', function() {
+				if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+					$(this).next().slideDown(200);
+					$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+				} else {
+					$(this).next().slideUp(200);
+					$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+				}
+			});
+		</script>
+	</body>
+
+</html>
