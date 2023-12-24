@@ -70,6 +70,7 @@
 						<dialog id="dialog1">
 							<h2>修改账号信息</h2>
 							<form>
+								<p>序号:<input type="text" id="number">
 								<p>账号:<input type="text" id="name"></p>
 								<p>类型:<input type="text" id="type"></p>
 								<p>昵称:<input type="text" id="nickname"></p>
@@ -82,14 +83,41 @@
 					</div>
 					<div class="offcial-table table-margin clearfix" id="add">
 						<div style="border-bottom: rgb(179, 177, 177) 0.5px solid;position: relative;">
-							<p style="font-weight: bold;font-size: larger;margin:20px;margin-bottom: 5px;">我的其他邮箱</p>
-							<p style="margin: 20px;margin-top: 5px;">添加其他邮箱账号，即可收取和管理其他邮箱的邮件。</p>
-							<button id="button3" onclick="show()">添加其他邮箱账号</button>
+							<p style="font-weight: bold;font-size: larger;margin:20px;margin-bottom: 5px;">我的邮箱</p>
+							<p style="margin: 20px;margin-top: 5px;">添加邮箱账号，即可收取和管理该邮箱的邮件。</p>
+							<button id="button3" onclick="show()">添加邮箱账号</button>
 						</div>
-						<div style="height: 200px;width: auto;text-align: center; margin-top: 150px;">
-							<a href="#" onclick="show()" style="text-decoration: none;color: rgb(71, 170, 227);">添加账号</a>
-							<p style="color: rgb(176, 176, 176);">暂无其他邮箱账号</p>
-						</div>
+						
+						<div class="offcial-table table-margin clearfix" id="">
+							<div class="tr-th clearfix">
+								<div class="th w30 text-center">
+									账号
+								</div>
+								<div class="th w20 text-center">
+									类型
+								</div>
+								<div class="th w20 text-center">
+									昵称
+								</div>
+								<div class="th w30 text-center">
+									添加时间
+								</div>
+							</div>
+							<div class="tr clearfix border-bottom-none" id="11">
+								<div class="td w30 text-center" id="n1">
+									1122334455@qq.com
+								</div>
+								<div class="td w20 text-center" id="t1">
+									qq邮箱
+								</div>
+								<div class="td w20 text-center" id="k1">
+									٩
+								</div>	
+								<div class="td w30 text-center">
+									无
+								</div>							
+							</div>
+						
 						<dialog id="dialog2">
 							<h2>添加邮箱账号</h2>
 								<p>账号:</p>
@@ -105,6 +133,10 @@
 		</div>
 
 		<script> 
+			function getBeijingTime() {  
+				const now = new Date();   
+				return now;  
+			}  
             var accountLink = document.getElementById("link1");   
             var addAccountLink = document.getElementById("link2");   
             var manageDiv = document.getElementById("manage");    
@@ -125,12 +157,13 @@
 				var dialog = document.getElementById('dialog2');
 				dialog.style.display='none';
 				var existingDiv = document.getElementById('1'); 
+				
 				var username = document.getElementById("username").value;
 				var type = username.match(/@(\w+)\./)[1];  
 				var newDiv = document.createElement('div');  
 				newDiv.className = 'tr clearfix border-bottom-none';  
-				newDiv.id = '2';  
-					
+				newDiv.id = (parseInt(manageDiv.children.length)-1).toString();  
+				
 				var emailDiv = document.createElement('div');  
 				emailDiv.className = 'td w30 text-center';  
 				emailDiv.id = 'n';  
@@ -166,9 +199,35 @@
 				deleteLink.className = 'td w15 text-center';  
 				deleteLink.id = '';  
 				newDiv.appendChild(deleteLink);  
+				console.log(newDiv);
 				
 				existingDiv.parentNode.insertBefore(newDiv, existingDiv.nextSibling);
 
+				var existingDiv2 = document.getElementById('11');
+				var newDiv2 = document.createElement('div');  
+				newDiv2.className = 'tr clearfix border-bottom-none'; 
+				newDiv2.id = '12';
+				var emailDiv2 = document.createElement('div');  
+				emailDiv2.className = 'td w30 text-center';  
+				emailDiv2.id = 'n1';  
+				emailDiv2.textContent = username;  
+				newDiv2.appendChild(emailDiv2); 
+				var emailTypeDiv2 = document.createElement('div');  
+				emailTypeDiv2.className = 'td w20 text-center';  
+				emailTypeDiv2.id = 't1';  
+				emailTypeDiv2.textContent = type+'邮箱';  
+				newDiv2.appendChild(emailTypeDiv2);
+				var numberDiv2 = document.createElement('div');  
+				numberDiv2.className = 'td w20 text-center';  
+				numberDiv2.id = 'k1';  
+				numberDiv2.textContent = '٩';  
+				newDiv2.appendChild(numberDiv2);
+				const beijingTime = getBeijingTime().toLocaleString(); 
+				var caozuo = document.createElement('div')
+				caozuo.className = 'td w30 text-center';
+				caozuo.textContent = beijingTime;
+				newDiv2.appendChild(caozuo);
+				existingDiv2.parentNode.insertBefore(newDiv2, existingDiv2.nextSibling);
 			}
 			function show(){
 				var dialog = document.getElementById('dialog2');
@@ -183,7 +242,8 @@
 				var name =Elements[0].innerText;
 				var type = Elements[1].innerText;  
 				var nickname = Elements[2].innerText;  
-			
+				console.log(divId);
+				document.getElementById('number').value = divId;
 				document.getElementById('name').value = name;  
 				document.getElementById('type').value = type;  
 				document.getElementById('nickname').value = nickname;  
@@ -197,14 +257,39 @@
 				var dialog = document.getElementById(dialogId);
 				dialog.style.display='none';
 
+				var number = document.getElementById('number').value;
 				var name = document.getElementById("name").value;
 				var type = name.match(/@(\w+)\./)[1];  
 				var nickname = document.getElementById("nickname").value;
-				document.getElementById('n').textContent = name;
-				document.getElementById('t').textContent = type+'邮箱';
-				document.getElementById('k').textContent = nickname;
+				var div = document.getElementById(number);
+
+				var element1 = div.querySelector('#n'); 
+				element1.textContent = name;
+				var element2 = div.querySelector('#t');
+				element2.textContent = type+'邮箱';
+				var element3 = div.querySelector('#k');
+				element3.textContent = nickname;
+				if(number=='1'){
+					var div2 = document.getElementById('11');
+				}
+				if(number=='2'){
+					var div2 = document.getElementById('12');
+				}
+				var element4 = div2.querySelector('#n1'); 
+				element4.textContent = name;
+				var element5 = div2.querySelector('#t1');
+				element5.textContent = type+'邮箱';
+				var element6 = div2.querySelector('#k1');
+				element6.textContent = nickname;
 			}
 			function hide(divId){
+				if (divId=='1'){
+				var div = document.getElementById('11');
+				div.style.display='none';
+				}if (divId=='2'){
+				var div = document.getElementById('12');
+				div.style.display='none';
+				}
 				var div = document.getElementById(divId);
 				div.style.display='none';
 			}
@@ -219,5 +304,4 @@
 			});
 		</script>
 	</body>
-
 </html>
