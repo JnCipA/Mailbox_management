@@ -149,6 +149,61 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
     color: #888;
 }
 
+/* 已发送 */
+.email-list label{
+    flex-grow: 1;
+}
+
+.email-list .addressee{
+    flex-grow: 2;
+}
+
+.email-list .email_subject{
+    flex-grow: 3;
+}
+
+.email-list .send_time{
+    flex-grow: 4;
+}
+
+.button-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    gap: 10px; /* 控制按钮之间的间隔 */
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.post_button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+.post_button:hover {
+    background-color: #f0f0f0;
+    color: #555;
+}
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+  
+  
+  
+
 /*表格*/
 .table { width: 100%; border: 1px solid #e7e7e7; border-collapse:collapse; border-spacing:0; table-layout: fixed; }
 .table tr th, .table tr td { padding: 12px 8px; border-bottom: 1px solid #e1e6eb; }

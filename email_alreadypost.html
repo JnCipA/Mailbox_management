@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email_alreadypost</title>
+    <link rel="stylesheet" type="text/css" href="Css/identify.css" />
+    <link rel="stylesheet" type="text/css" href="Css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="Css/account.css" />
+    <link rel="stylesheet" type="text/css" href="Css/style.css" />
+    <link rel="stylesheet" type="text/css" href="Css/control_index.css" />
+    <script type="text/javascript" src="Js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Js/layer/layer.js"></script>
+    <script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
+    <script type="text/javascript" src="Js/select.js"></script>
+    <script type="text/javascript" src="Js/haidao.validate.js"></script>
+</head>
+<body>
+    <div id="view-topbar"></div>
+    <script>
+        $('#view-topbar').load('module/view-topbar.html')
+    </script>
+    <div class="view-body">
+        <div id="view-sidebar"></div>
+        <script>
+            $('#view-sidebar').load('module/view-sidebar.html')
+        </script>
+        <div class="view-product" style="box-shadow: 0px 0px 10px rgba(0,0,0,0.1);">
+            <div class="email-app">
+                <div class="inbox">
+                    <div class="inbox-header">
+                        <h2>已发送信件</h2>
+                    </div>
+                    <div class="email-list">
+                        <div>
+                            <input type="checkbox" name="chooseAll" id="chooseAll">
+                            <label for="chooseAll"> &nbsp;</label>
+                            <p class="addressee">收件人</p>
+                            <p class="email_subject">主题</p>
+                            <p class="send_time">时间</p>
+                            <p>收藏</p>
+                        </div>
+                        <br/><br/>
+                        <!-- 这里动态填充邮件列表 -->
+                    </div>
+                    <div class="button-container">
+                        <button class="post_button" id="delete" >删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".sidebar-title").live('click', function() {
+            if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+                $(this).next().slideDown(200);
+                $(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+            } else {
+                $(this).next().slideUp(200);
+                $(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+            }
+        });
+    </script>
+
+    <!-- 生成邮件 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var emailList = document.querySelector('.email-list');
+
+            // 模拟的邮件数据
+            var emails = [
+                { sender: "收件人1", subject: "主题1", date: "2023-12-23", content:"这是第一封邮件"},
+                { sender: "收件人2", subject: "主题2", date: "2023-12-22", content:"这是第二封邮件" },
+                { sender: "收件人3", subject: "主题3", date: "2023-12-21", content:"这是第三封邮件" }
+                // 可以添加更多的模拟邮件
+            ];
+
+            // 生成邮件列表
+            emails.forEach(function(email,index) {
+                var div = document.createElement('div');
+                div.innerHTML = '<input type="checkbox" name="choose" id="choose'+index+'"><label for="choose'+index+'"> &nbsp;</label>'
+                    +'<p class="addressee">' 
+                    + email.sender 
+                    + '</p> <p class="email_subject">' 
+                    + email.subject 
+                    + '</p> <p class="send_time">' 
+                    + email.date 
+                    + '</p>'
+                    + '<img src="./node_modules/bootstrap-icons/icons/star.svg" alt="收藏" class="collection"/>';
+                div.className = 'email-item';
+                var allPTags = div.querySelectorAll('p');
+                allPTags.forEach(function(pTag) {
+                    pTag.addEventListener('click', function() {
+                        alert('收件人:'+email.sender+'\n主题:'+email.subject+'\n内容:' + email.content+'\n时间:'+email.date);
+                    });
+                });
+                emailList.appendChild(div);
+            });
+        });
+    </script>
+    
+    <!-- 全选功能 -->
+    <script>
+        var chooseAll = document.getElementById("chooseAll");
+
+        chooseAll.addEventListener('click',function(){
+            var checkbox = document.querySelectorAll('input[name="choose"]');
+
+            checkbox.forEach(function(check) {
+                check.checked = chooseAll.checked;
+            });
+        });
+    </script>
+
+    <!-- 收藏功能 -->
+        <script>
+            $(document).on('click', '.collection', function() {
+            var currentSrc = $(this).attr('src');
+
+            if (currentSrc === './node_modules/bootstrap-icons/icons/star.svg') {
+                $(this).attr('src', './node_modules/bootstrap-icons/icons/star-fill.svg');
+            } else {
+                $(this).attr('src', './node_modules/bootstrap-icons/icons/star.svg');
+            }
+        });
+    </script>
+    
+    <!-- 删除功能 -->
+    <script>
+        var deleteButton = document.getElementById('delete'); // 假设按钮的 id 为 deleteButton
+
+        deleteButton.addEventListener('click', function() {
+            var selectedCheckboxes = document.querySelectorAll('input[name="choose"]:checked');
+            
+            selectedCheckboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    var divToDelete = checkbox.closest('.email-item');
+                    if (divToDelete) {
+                        divToDelete.remove();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
