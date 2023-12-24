@@ -46,48 +46,31 @@
 				Copyright 2023 来几个人都随便组版权所有
 			</div>
 		</div>
-
+		
 		<div class="popupDom">
 			<div class="popup  text-default">
 				
 			</div>
 		</div>
-		</div>
-		<script type="text/javascript" src="Js/Validform_v5.3.2_min.js"></script>
-		<script type="text/javascript">
-			/*动画（注册）*/
-
-			// $("#register-form").submit(function(event) {
-			// 	event.preventDefault(); // 阻止表单默认提交行为
-
-				// var vcodeValue = document.getElementById("vcode").value; // 获取 #vcode 输入框的值
-
-				// if (vcodeValue == "") {
-				// 	popup_msg('信息为空！');
-				// 	// return false; // 阻止表单提交
-				// } else if (vcodeValue == "123456") {
-				// 	window.location.href("login.html");
-				// }
-				// } else {
-				// 	popup_msg('输入的验证码不正确！');
-				// 	return false; // 阻止表单提交
-				// }
-			// });
-			/* js跳转 */ 
+	</div>
+	<script type="text/javascript" src="Js/Validform_v5.3.2_min.js"></script>
+	<script type="text/javascript">
+		/*动画（注册）*/
+		/* js跳转 */ 
 			var form = document.getElementById('register-form');
-
-			// 为表单添加提交事件监听器
+		
 			form.addEventListener('submit', function(event) {
 				// 阻止表单的默认提交行为
 				event.preventDefault();
-
-				// 这里可以添加您处理表单数据的代码
-				// 例如，验证输入、发送数据到服务器等
-
-				// 处理完成后，跳转到 login.html
-				window.location.href = 'login.html';
+				//验证码成功跳转到
+				var vcode = document.getElementById("vcode").value;
+				if(vcode == "123456"){
+					window.location.href = 'login.html';
+				}else{
+					popup("验证码错误");
+				}
 			});	
-
+				
 			/*发送验证码*/
 			$("#send").click(function() {
 				var obj = $("input[name=mobile]");
@@ -104,7 +87,7 @@
 					_status(60);
 				};
 			});
-
+			// 判断时间验证码第二次有60s的时效问题
 			function _status(count) {
 				var $send_sms = $("#send");
 				var count = count;
@@ -114,19 +97,14 @@
 					if (count > 0) {
 						$('#send').html(count + '秒后重试');
 						$("input[name='vcode']").removeAttr('disabled');
-						// $.cookie("register_vcode", count, {
-						// 	path: '/',
-						// 	expires: (1 / 86400) * count
-						// });
-
-					} else {
-						clearInterval(resend);
-						$send_sms.html("重获验证码").removeAttr('disabled');
-						// $.cookie("register_vcode", null);
-					}
-				}, 1000);
-			}
-		</script>
+							
+						} else {
+							clearInterval(resend);
+							$send_sms.html("重获验证码").removeAttr('disabled');
+						}
+					}, 1000);
+				}
+			</script>
 	</body>
-
-</html>
+	
+	</html>
