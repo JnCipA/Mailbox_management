@@ -268,6 +268,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .offcial-table .th{background:#f5f6fa;float:left;height:40px;color:#87898b;}
 .offcial-table .td{color:#818181;white-space:nowrap;float:left;min-height: 40px;}
 .offcial-table .td.text-roseo{color:#f30000;}
+.offcial-table .td.text-pay{color:#00ace9;}
 .offcial-td-style{ color:#818181; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;float:left;}
 .offcial-table .offical-td{width:100%;height:40px;overflow:hidden;}
 .white-space{white-space:nowrap;}
@@ -610,3 +611,5 @@ a.submit-order:hover{background:#40b2da;color:#fff}
     right: 20px;  
     bottom: 0px;
 }
+
+/*签到*/
