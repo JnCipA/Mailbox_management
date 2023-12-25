@@ -83,13 +83,6 @@
 				callback: function(ret) {
 					popup_msg('' + ret.info + '');
 					window.location.href = "index.html";
-					// 考虑到没有连接后端的关系所以我们直接实现跳转
-			 		// if (ret.status == 1) {
-			 		// 		if (ret.uc_user_synlogin) {
-			 		// 		$("body").append(ret.uc_user_synlogin);
-			 		// 	}
-			 		// 	setTimeout("window.location='" + ret.url + "'", 2000);
-			 		// }
 			 	}
 			 })
 
