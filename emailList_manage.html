@@ -482,20 +482,14 @@
 			// 实现切换功能
 				var switchLinks = document.getElementsByClassName('switch-link');
 	
-			// Loop through all switch links and attach a click event listener to each
 				for (var i = 0; i < switchLinks.length; i++) {
 					switchLinks[i].addEventListener('click', function() {
-						// Find the closest parent div with class "tr"
 						var parentDiv = this.closest('.tr');
 						
-						// Get the content of the div with ID "n" inside the parent div
 						var content = parentDiv.querySelector('#n').textContent.trim();
 	
-						// Display the content in an alert (for demonstration)
 						alert("切换到邮箱: " + content);
 						
-						// You can now use the 'content' variable as needed
-						// For example, you can pass it to a function or use it in further operations
 					});
 				}
 		</script>
