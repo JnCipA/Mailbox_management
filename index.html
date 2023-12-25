@@ -156,12 +156,12 @@
 						<div class="mine-product-content clearfix">
 							<h2 class="h6 margin-big-bottom">已有邮箱列表</h2>
 							<ul class="w50 fl lists">
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱1@example.com</p></li>
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱2@example.com</p></li>
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱3@example.com</p></li>
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱4@example.com</p></li>
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱5@example.com</p></li>
-								<li class="w70 lists-border-list"><p class="border-list-text">邮箱6@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱1@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱2@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱3@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱4@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱5@example.com</p></li>
+								<li class="w70 lists-border-list"><p class="border-list-text" style="cursor: pointer;">邮箱6@example.com</p></li>
 								<!-- 更多邮箱 -->
 							</ul>
 						</div>
@@ -219,6 +219,17 @@
 			if (event.target == modal) {
 				modal.style.display = "none";
 			}
+		}
+	</script>
+
+	<!-- 实现针对邮箱切换功能 -->
+	<script>
+		var email_change = document.getElementsByClassName("border-list-text");
+
+		for (var i = 0; i < email_change.length; i++) {
+			email_change[i].addEventListener('click', function() {
+				alert("切换到邮箱:" + this.innerHTML);
+			});
 		}
 	</script>
 </body>
